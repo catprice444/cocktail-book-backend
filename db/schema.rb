@@ -22,12 +22,14 @@ ActiveRecord::Schema.define(version: 2021_06_10_002800) do
 
   create_table "cocktails", force: :cascade do |t|
     t.string "name"
-    t.string "recipe"
-    t.string "ingredients"
-    t.integer "alcohol_id"
+    t.text "recipe"
+    t.text "ingredients"
+    t.integer "alcohol_id", null: false
     t.integer "rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["alcohol_id"], name: "index_cocktails_on_alcohol_id"
   end
 
+  add_foreign_key "cocktails", "alcohols"
 end
