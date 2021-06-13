@@ -1,15 +1,15 @@
 class Api::V1::CocktailsController < ApplicationController
-    # before_action :set_alcohol
+    before_action :set_alcohol
     
     def index 
-        # @cocktails = @alcohol.cocktails
-        @cocktails = Cocktail.all
+        @cocktails = @alcohol.cocktails
+        # @cocktails = Cocktail.all
         render json: @cocktails
     end 
 
     def show 
-        # @cocktail = @alcohol.cocktails.find(params[:id])
-        @cocktail = Cocktail.find(params[:id])
+        @cocktail = @alcohol.cocktails.find_by(params[:id])
+        # @cocktail = Cocktail.find(params[:id])
         render json: @cocktail
     end 
 
@@ -39,9 +39,9 @@ class Api::V1::CocktailsController < ApplicationController
 
     private
 
-    # def set_alcohol 
-    #     @alcohol = Alcohol.find(params[:alcohol_id])
-    # end 
+    def set_alcohol 
+        @alcohol = Alcohol.find(params[:alcohol_id])
+    end 
 
     def cocktail_params
         params.require(:cocktail).permit(:name, :recipe, :ingredients, :rating, :alcohol_id)
