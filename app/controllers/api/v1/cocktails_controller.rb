@@ -1,5 +1,5 @@
 class Api::V1::CocktailsController < ApplicationController
-    before_action :set_alcohol
+    # before_action :set_alcohol
     
     def index 
         # @cocktails = @alcohol.cocktails
@@ -14,8 +14,8 @@ class Api::V1::CocktailsController < ApplicationController
     end 
 
     def create
-        @cocktail = @alcohol.cocktails.new(cocktail_params)
-        # @cocktail = Cocktail.new(cocktail_params)
+        # @cocktail = @alcohol.cocktails.new(cocktail_params)
+        @cocktail = Cocktail.new(cocktail_params)
         # Do I need to make a validation method in the model, if so, what?
         if @cocktail.save 
             render json: @cocktail
@@ -39,9 +39,9 @@ class Api::V1::CocktailsController < ApplicationController
 
     private
 
-    def set_alcohol 
-        @alcohol = Alcohol.find(params[:alcohol_id])
-    end 
+    # def set_alcohol 
+    #     @alcohol = Alcohol.find(params[:alcohol_id])
+    # end 
 
     def cocktail_params
         params.require(:cocktail).permit(:name, :recipe, :ingredients, :rating, :alcohol_id)
