@@ -35,11 +35,11 @@ class Api::V1::CocktailsController < ApplicationController
     private
 
     def set_alcohol 
-        @alcohol= Alcohol.find(params[:alcohol])
+        @alcohol= Alcohol.find(params[:alcohol_id])
     end 
 
     def cocktail_params
-        params.require(:cocktail).permit(:name, :recipe, :ingredients, :rating, :alcohol)
+        params.require(:cocktail).permit(:name, :recipe, :ingredients, :rating, :alcohol_id)
     end 
 
 end
