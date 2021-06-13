@@ -14,7 +14,7 @@ class Api::V1::AlcoholsController < ApplicationController
     end 
 
     def show 
-        @alcohol = Alcohol.find_by(params[:id])
+        @alcohol = Alcohol.find(params[:id])
         render json: @alcohol
     end 
 

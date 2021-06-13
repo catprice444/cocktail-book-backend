@@ -8,8 +8,8 @@ class Api::V1::CocktailsController < ApplicationController
     end 
 
     def show 
-        # @cocktail = @alcohol.cocktails.find_by(params[:id])
-        @cocktail = Cocktail.find_by(params[:id])
+        # @cocktail = @alcohol.cocktails.find(params[:id])
+        @cocktail = Cocktail.find(params[:id])
         render json: @cocktail
     end 
 
@@ -40,7 +40,7 @@ class Api::V1::CocktailsController < ApplicationController
     private
 
     def set_alcohol 
-        @alcohol= Alcohol.find_by(params[:alcohol_id])
+        @alcohol = Alcohol.find(params[:alcohol_id])
     end 
 
     def cocktail_params
