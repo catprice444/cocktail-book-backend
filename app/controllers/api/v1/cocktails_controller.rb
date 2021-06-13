@@ -18,13 +18,11 @@ class Api::V1::CocktailsController < ApplicationController
         end 
     end 
 
-    def edit 
+    def update
         @cocktail = Cocktail.find(params[:id])
-        if @cocktail.save
-            render json: @cocktail
-        else 
-            render json: (error: "Error saving Cocktail")
-        end 
+        @cocktail.update(recipe: params["cocktail"]["recipe"], ingredients: params["cocktail"]["ingredients"], rating: params["cocktail"]["rating"] )
+        @cocktail.save
+        render json: @cocktail
     end 
 
     def destroy

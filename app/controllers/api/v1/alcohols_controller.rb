@@ -18,10 +18,12 @@ class Api::V1::AlcoholsController < ApplicationController
         render json: @alcohol
     end 
 
-    def edit 
+    def update
         @alcohol = Alcohol.find(params[:id])
-        if 
-    end 
+        @alcohol.update(website: params["alcohol"]["website"], preference: params["alcohol"]["preference"])
+        @alcohol.save
+        render json: @alcohol
+    end
 
     private 
     def alcohol_params 
