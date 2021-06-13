@@ -13,6 +13,7 @@ class Api::V1::AlcoholsController < ApplicationController
 
     private 
     def alcohol_params 
+        params.require(:alcohol).permit(:name, :website, :preference)
     end 
 
 end
