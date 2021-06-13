@@ -1,4 +1,6 @@
 class Api::V1::CocktailsController < ApplicationController
+    before_action :set_alcohol
+    
     def index 
         @cocktails = Cocktail.all
         render json: @cocktails
@@ -31,6 +33,11 @@ class Api::V1::CocktailsController < ApplicationController
     end 
 
     private
+
+    def set_alcohol 
+        @alcohol= Alcohol.find(params[:alcohol])
+    end 
+
     def cocktail_params
         params.require(:cocktail).permit(:name, :recipe, :ingredients, :rating, :alcohol)
     end 
