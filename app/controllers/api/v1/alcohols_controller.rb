@@ -9,7 +9,7 @@ class Api::V1::AlcoholsController < ApplicationController
         if @alcohol.save 
             render json: @account 
         else 
-            render json: (error: "Error creating Alcohol")
+            render json: {error: "Error creating Alcohol"}
         end 
     end 
 

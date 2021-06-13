@@ -8,29 +8,32 @@ class Api::V1::CocktailsController < ApplicationController
     end 
 
     def show 
-        # @cocktail = @alcohol.cocktail.find_by(params[:id])
+        # @cocktail = @alcohol.cocktails.find_by(params[:id])
         @cocktail = Cocktail.find_by(params[:id])
         render json: @cocktail
     end 
 
     def create
-        @cocktail = Cocktail.new(cocktail_params)
+        @cocktail = @alcohol.cocktails.new(cocktail_params)
+        # @cocktail = Cocktail.new(cocktail_params)
+        # Do I need to make a validation method in the model, if so, what?
         if @cocktail.save 
             render json: @cocktail
         else 
-            render json: (error: "Error making Cocktail")
+            render json: {error: "Error making Cocktail"}
         end 
     end 
 
     def update
-        @cocktail = Cocktail.find_by(params[:id])
+        @cocktail = Cocktail.find_by(params["id"])
         @cocktail.update(recipe: params["cocktail"]["recipe"], ingredients: params["cocktail"]["ingredients"], rating: params["cocktail"]["rating"] )
         @cocktail.save
         render json: @cocktail
     end 
 
     def destroy
-        @cocktail = Cocktail.find_by(params[:id])
+        # this method needs work
+        @cocktail = Cocktail.find_by(params["id"])
         @cocktail.destroy
     end 
 
