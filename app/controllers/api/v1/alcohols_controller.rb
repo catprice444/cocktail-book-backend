@@ -1,13 +1,14 @@
 class Api::V1::AlcoholsController < ApplicationController
+  
     def index 
         @alcohols = Alcohol.all 
         render json: @alcohols
     end 
 
-    def create 
+    def create
         @alcohol = Alcohol.new(alcohol_params)
-        if @alcohol.save 
-            render json: @account 
+        if @alcohol.name != 'null' && @alcohol.save
+            render json: @alcohol 
         else 
             render json: {error: "Error creating Alcohol"}
         end 
