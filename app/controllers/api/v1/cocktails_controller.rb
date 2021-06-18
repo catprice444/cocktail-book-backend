@@ -27,11 +27,11 @@ class Api::V1::CocktailsController < ApplicationController
         render json: @cocktail
     end 
 
-    # def destroy
-    #     # this method needs work
-    #     @cocktail = Cocktail.find_by(params["id"])
-    #     @cocktail.destroy
-    # end 
+    def destroy
+        @cocktail = Cocktail.find(params["id"])
+        @cocktail.destroy
+        render json: @alcohol
+    end 
 
     private
 
