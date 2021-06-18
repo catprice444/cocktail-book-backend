@@ -13,7 +13,6 @@ class Api::V1::CocktailsController < ApplicationController
 
     def create
         @cocktail = @alcohol.cocktails.new(cocktail_params)
-        # Do I need to make a validation method in the model, if so, what?
         if @cocktail.save 
             render json: @alcohol
         else 
@@ -28,11 +27,11 @@ class Api::V1::CocktailsController < ApplicationController
         render json: @cocktail
     end 
 
-    def destroy
-        # this method needs work
-        @cocktail = Cocktail.find_by(params["id"])
-        @cocktail.destroy
-    end 
+    # def destroy
+    #     # this method needs work
+    #     @cocktail = Cocktail.find_by(params["id"])
+    #     @cocktail.destroy
+    # end 
 
     private
 

@@ -27,49 +27,59 @@ alcohol_e = Alcohol.create(name: "Rum",
 cocktail_a = Cocktail.create(name: "Gin Martini", 
     alcohol_id: 3, 
     ingredients: "2 ¾ oz Gin. ¾ oz Dry vermouth. Lemon twist or olives for garnish.", 
-    recipe: "Combine ingredients in an ice-filled mixing glass or shaker. Stir vigorously for 15 seconds. Strain into chilled coupe or Martini glass. Garnish with lemon twist or olives and enjoy.")
+    recipe: "Combine ingredients in an ice-filled mixing glass or shaker. Stir vigorously for 15 seconds. Strain into chilled coupe or Martini glass. Garnish with lemon twist or olives and enjoy.",
+    rating: 1)
 
 cocktail_b = Cocktail.create(name: "Negroni", 
     alcohol_id: 3, 
     ingredients: "1 oz Gin. 1 oz Campari. 1 oz Sweet Vermouth.", 
-    recipe: "Combine all ingredients in mixing glass with ice. Stir. Strain into chilled cocktail glass or over ice in a rocks glass. Garnish with an orange twist and enjoy.")
+    recipe: "Combine all ingredients in mixing glass with ice. Stir. Strain into chilled cocktail glass or over ice in a rocks glass. Garnish with an orange twist and enjoy.",
+    rating: 2)
 
 cocktail_c = Cocktail.create(name: "Moscow Mule", 
     alcohol_id: 1, 
     ingredients: "2 ounces vodka. 1 tablespoon (½ ounce) freshly-squeezed lime juice. 4 ounces ginger beer. ice.", 
-    recipe: "Fill a copper mug or a tall cocktail glass with ice. Add vodka and lime juice.  Then fill the glass to the top with ginger beer. Give the drink a quick stir, top with garnish(es) if desired, then serve cold.")
+    recipe: "Fill a copper mug or a tall cocktail glass with ice. Add vodka and lime juice.  Then fill the glass to the top with ginger beer. Give the drink a quick stir, top with garnish(es) if desired, then serve cold.",
+    rating: 5)
 
 cocktail_d = Cocktail.create(name: "Cosmopolitan", 
     alcohol_id: 1, 
     ingredients: "1 1/2 oz Vodka. ½ oz Cranberry juice. ¾ oz Lime. ¾ oz Cointreau L'unique.", 
-    recipe: "Combine all ingredients in shaker tin. Add ice. Shake vigorously, until tin is frosted over. Strain into chilled cocktail glass. Garnish with lime twist and enjoy.")
+    recipe: "Combine all ingredients in shaker tin. Add ice. Shake vigorously, until tin is frosted over. Strain into chilled cocktail glass. Garnish with lime twist and enjoy.",
+    rating: 2)
 
 cocktail_e = Cocktail.create(name: "Margarita", 
     alcohol_id: 2, 
     ingredients: "1 ¾ oz Blanco tequila. 1 oz Lime juice. ¾ oz Triple Sec.", 
-    recipe: "Combine all ingredients in shaker tin. Add ice to small shaker tin. Shake vigorously. Strain into chilled rocks glass with a salt rim over fresh ice. Garnish with lime and enjoy.")
+    recipe: "Combine all ingredients in shaker tin. Add ice to small shaker tin. Shake vigorously. Strain into chilled rocks glass with a salt rim over fresh ice. Garnish with lime and enjoy.",
+    rating: 5)
 
 cocktail_f = Cocktail.create(name: "Tequila Sunrise", 
     alcohol_id: 2, 
     ingredients: "2 oz Tequila. As needed Orange juice. 1/2 oz Grenadine.", 
-    recipe: "Combine ingredients in a highball, excluding grenadine. Add ice. Using a spoon, sink grenadine to the bottom of the glass. Garnish with an orange wheel and enjoy.")
+    recipe: "Combine ingredients in a highball, excluding grenadine. Add ice. Using a spoon, sink grenadine to the bottom of the glass. Garnish with an orange wheel and enjoy.",
+    rating: 4)
 
 cocktail_g = Cocktail.create(name: "Rye Old Fashion", 
     alcohol_id: 4, 
     ingredients: "2 ½ oz Bourbon (or Rye Whiskey). 1/2 oz simple syrup. 3 dash Angostura Bitters. 1 each Lemon and orange twist.", 
-    recipe: "Combine first three ingredients in a rocks glass. Stir ingredients. Add ice. Garnish with a lemon and orange twist and enjoy.")
+    recipe: "Combine first three ingredients in a rocks glass. Stir ingredients. Add ice. Garnish with a lemon and orange twist and enjoy.",
+    rating: 2)
 
 cocktail_h = Cocktail.create(name: "Sazerac", 
     alcohol_id: 4, 
     ingredients: "3 oz Rye or Brandy. 1/2 oz Demerara syrup. 10 dashes Peychaud's Bitters. 1 ea Lemon twist. As needed Absinthe.", 
-    recipe: "Combine all ingredients in mixing glass with ice. Stir. Strain into chilled rocks glass rinsed with absinthe, with no ice. Garnish with lemon twist and enjoy.")
+    recipe: "Combine all ingredients in mixing glass with ice. Stir. Strain into chilled rocks glass rinsed with absinthe, with no ice. Garnish with lemon twist and enjoy.",
+    rating: 3)
 
 cocktail_i = Cocktail.create(name: "Mai Tai", 
     alcohol_id: 5, 
     ingredients: "1 ounce white (Martinique) rum. 1 ounce dark (Jamaican) rum. 1 ounce of lime juice. ½ ounce of orgeat syrup. 2 strawberries (chopped).", 
-    recipe: "Add white rum, lime juice, orgeat syrup, strawberries and ice to a cocktail shaker. Shake mixture then strain over crushed ice in Collins glass. Float dark rum on top of mixture.")
+    recipe: "Add white rum, lime juice, orgeat syrup, strawberries and ice to a cocktail shaker. Shake mixture then strain over crushed ice in Collins glass. Float dark rum on top of mixture.",
+    rating: 4)
 
 cocktail_j = Cocktail.create(name: "Pina Colada", 
     alcohol_id: 5, 
     ingredients: "2 oz White Rum. 2 oz Coconut Cream. 2 oz Pineapple Juice. Pineapple leaf.", 
-    recipe: "Combine all ingredients, except pineapple leaf, in shaker. Add ice to fill. Shake vigorously, until shaker is frosted over. Fill hurricane glass with crushed ice. Strain cocktail into glass. Garnish with pineapple leaf and enjoy.")
+    recipe: "Combine all ingredients, except pineapple leaf, in shaker. Add ice to fill. Shake vigorously, until shaker is frosted over. Fill hurricane glass with crushed ice. Strain cocktail into glass. Garnish with pineapple leaf and enjoy.",
+    rating: 3)
