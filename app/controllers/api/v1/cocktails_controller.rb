@@ -29,7 +29,6 @@ class Api::V1::CocktailsController < ApplicationController
 
     def destroy
         @cocktail = Cocktail.find(params["id"])
-        @alcohol = Alcohol.find(@cocktail.alcohol_id)
         @cocktail.destroy
         render json: @alcohol
     end 
