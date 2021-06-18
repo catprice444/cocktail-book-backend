@@ -21,14 +21,14 @@ class Api::V1::AlcoholsController < ApplicationController
 
     def update
         @alcohol = Alcohol.find_by(params[:id])
-        @alcohol.update(website: params["alcohol"]["website"], preference: params["alcohol"]["preference"])
+        @alcohol.update(website: params["alcohol"]["website"])
         @alcohol.save
         render json: @alcohol
     end
 
     private 
     def alcohol_params 
-        params.require(:alcohol).permit(:name, :website, :preference)
+        params.require(:alcohol).permit(:name, :website)
     end 
 
 end
