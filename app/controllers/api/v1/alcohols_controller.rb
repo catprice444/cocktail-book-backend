@@ -10,7 +10,7 @@ class Api::V1::AlcoholsController < ApplicationController
         if @alcohol.name != 'null' && @alcohol.save
             render json: @alcohol 
         else 
-            render json: {error: "Error creating Alcohol"}
+            render json: {error: "Make sure to fill in all fields"}
         end 
     end 
 

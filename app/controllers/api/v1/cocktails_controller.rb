@@ -16,7 +16,7 @@ class Api::V1::CocktailsController < ApplicationController
         if @cocktail.save 
             render json: @alcohol
         else 
-            render json: {error: "Error making Cocktail"}
+            render json: {error: "Make sure to fill in all fields"}
         end 
     end 
 
