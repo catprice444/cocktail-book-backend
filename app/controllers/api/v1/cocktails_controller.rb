@@ -15,7 +15,7 @@ class Api::V1::CocktailsController < ApplicationController
         @cocktail = @alcohol.cocktails.new(cocktail_params)
         # Do I need to make a validation method in the model, if so, what?
         if @cocktail.save 
-            render json: @account
+            render json: @alcohol
         else 
             render json: {error: "Error making Cocktail"}
         end 
