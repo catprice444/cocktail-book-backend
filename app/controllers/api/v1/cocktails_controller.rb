@@ -2,23 +2,20 @@ class Api::V1::CocktailsController < ApplicationController
     before_action :set_alcohol
     
     def index 
-        @cocktails = @alcohol.cocktails
-        # @cocktails = Cocktail.all
+        @cocktails = Cocktail.all
         render json: @cocktails
     end 
 
     def show 
-        @cocktail = @alcohol.cocktails.find_by(params[:id])
-        # @cocktail = Cocktail.find(params[:id])
+        @cocktail = Cocktail.find(params[:id])
         render json: @cocktail
     end 
 
     def create
-        # @cocktail = @alcohol.cocktails.new(cocktail_params)
-        @cocktail = Cocktail.new(cocktail_params)
+        @cocktail = @alcohol.cocktails.new(cocktail_params)
         # Do I need to make a validation method in the model, if so, what?
         if @cocktail.save 
-            render json: @cocktail
+            render json: @account
         else 
             render json: {error: "Error making Cocktail"}
         end 
