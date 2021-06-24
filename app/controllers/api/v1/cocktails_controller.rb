@@ -1,5 +1,5 @@
 class Api::V1::CocktailsController < ApplicationController
-    before_action :set_alcohol
+    before_action :set_alcohol, except: [:index]
     
     def index 
         @cocktails = Cocktail.all
@@ -18,14 +18,7 @@ class Api::V1::CocktailsController < ApplicationController
         else 
             render json: {error: "Make sure to fill in all fields"}
         end 
-    end 
-
-    def update
-        @cocktail = Cocktail.find_by(params["id"])
-        @cocktail.update(recipe: params["cocktail"]["recipe"], ingredients: params["cocktail"]["ingredients"], rating: params["cocktail"]["rating"] )
-        @cocktail.save
-        render json: @cocktail
-    end 
+    end  
 
     def destroy
         @cocktail = Cocktail.find(params["id"])
